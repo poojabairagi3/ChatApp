@@ -1,9 +1,9 @@
-async function signup(e){
- e.preventDefault();
- const name=e.target.name.value;
- const email=e.target.email.value;
- const phonenumber=e.target.phonenumber.value;
- const password=e.target.password.value;
+async function signup(event){
+ event.preventDefault();
+ const name=event.target.name.value;
+ const email=event.target.email.value;
+ const phonenumber=event.target.phonenumber.value;
+ const password=event.target.password.value;
  const obj={
     name:name,
     email:email,
