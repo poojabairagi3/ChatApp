@@ -9,7 +9,7 @@ exports.postUser = async (req, res, next) => {
     // console.log(name, email, password);
     const user = await User.findOne({ where: { email: email } });
     if (user) {
-      return res.status(201).json({ err: "email already exits" });
+      return res.status(201).json({success:false, message: "User already exists, Please Login" });
     } else {
       const salt = await bcrypt.genSalt(10);
       const hashPassword = await bcrypt.hash(password, salt);
@@ -20,6 +20,7 @@ exports.postUser = async (req, res, next) => {
         phonenumber:phonenumber,
         password: hashPassword,
       });
+      return res.status(200).json({success:true, message: "Successfuly signed up" });
     }
   }
   catch (err) {
