@@ -19,6 +19,20 @@ async function send(event) {
     }
 }
 
+window.addEventListener('DOMContentLoaded', async () => {
+      try {
+        const token = localStorage.getItem('token')
+        let response = await axios.get('http://localhost:3000/chat/get-chat', { headers: { 'Authorization': token } })
+        // console.log(response);
+        response.data.mg.forEach(element => {
+                  showMessageOnScreen(element);
+                });
+               
+      }
+      catch (err) {
+        console.log(err);
+      }
+    })
 
 async function showMessageOnScreen(response){
     const parentElement=document.getElementById('Msgs');

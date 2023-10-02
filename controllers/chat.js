@@ -1,5 +1,4 @@
 const Chat = require('../models/chat');
-
 exports.postchat=async (req,res)=>{
     
   try{
@@ -13,4 +12,13 @@ exports.postchat=async (req,res)=>{
      res.status(500).json({success:false});
  }}
 
- 
+ exports.getchat=async(req,res)=>{
+  try{
+   const mg= await Chat.findAll()
+    res.status(200).json({success:true ,mg });
+
+  }
+  catch(err){
+    console.log(err);
+  }
+ }
