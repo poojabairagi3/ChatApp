@@ -17,6 +17,9 @@
       background-size: cover;
       opacity: 0.9;
     }
+    form{
+      padding: 15px;
+    }
     .card1{
       /* background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDaod6XV0s-_KQ5M5X38P7BNNiX7VoaqBerw&usqp=CAU') repeat; */
       border: 2px solid black;
@@ -35,10 +38,11 @@
           background-repeat: no-repeat;
           background-attachment: fixed;
       background-size: cover;
+     
       
         }
         .card-body1 {
-      margin: 30px;
+      margin: 20px;
       padding-left: 30px;
       padding-right: 30px;
       padding-top: 10px;
@@ -61,13 +65,26 @@
         }
         .free{
           background-color: rgb(233, 228, 232);
-          padding-left: 30px;
+          padding-left: 500px;
         }
         .back{
           background-color: rgb(236, 232, 227);
           padding-bottom: 10px;
           border-radius: 2px;
         }
+        ul{
+         list-style:circle;
+         margin: 20px;
+         padding: 20px;
+         
+        }
+        #oldone{
+          color: rgb(119, 119, 194);
+          border: none;
+          margin-left: 50px;
+          margin-bottom: 5px;
+        }
+       
         </style>
 </head>
 
@@ -104,7 +121,7 @@
 </div>
  
   </div>
-  <br>
+ 
   <!-- <div class="card" >
     <div style="text-align: center;">
       <h3 class="card-header">messages</h3>
@@ -122,8 +139,11 @@
       <div class="back">
       <h3 style="color: rgb(0, 238, 255);" class="card-header">messages</h3></div>
       <div class="card-body1"> 
-        <ul style="list-style:circle;" class="list-group-item list-group-item-secondary" id="Msgs"></ol>
-      </div>
+        <ul  class="list-group-item list-group-item-secondary" id="Msgs">
+          
+        </ul>
+        <input  type="submit" value="old messages" id="oldone" />
+        
     </div>
   </div>
 </div>

@@ -1,3 +1,4 @@
+const { Op } = require('sequelize');
 const Chat = require('../models/chat');
 exports.postchat=async (req,res)=>{
     
@@ -14,7 +15,11 @@ exports.postchat=async (req,res)=>{
 
  exports.getchat=async(req,res)=>{
   try{
-   const mg= await Chat.findAll()
+    const id= req.query.id || 0;
+console.log("ingetchatcontrollerline18");
+    console.log(id);
+
+   const mg= await Chat.findAll({where:{id:{[Op.gt]:id}}});
     res.status(200).json({success:true ,mg });
 
   }

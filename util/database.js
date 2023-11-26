@@ -8,7 +8,7 @@
 // });
 // module.exports=pool.promise();
 
-const Sequelize = require('sequelize');
+const{ Sequelize} = require('sequelize');
 
 const sequelize = new Sequelize('node-chat', 'root', 'Mysql@123', {
   dialect: 'mysql',
