@@ -24,7 +24,12 @@ const User = sequelize.define('user', {
     password: {
         type: Sequelize.STRING,
         allowNull: false
-
+    },
+    isAdmine:{
+        type: Sequelize.BOOLEAN,
+        allowNull: false,
+        defaultValue: false
     }
+    
 })
 module.exports = User;

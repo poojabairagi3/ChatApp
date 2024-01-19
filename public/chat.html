@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat App</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+  <style>
+    .card {
+      background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIgn4foEF5_VnHGR1uGHNT3eNNDruoUUR9HQ&usqp=CAU') repeat;
+      border: 2px solid black;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      opacity: 0.9;
+    }
+    form{
+      padding: 15px;
+    }
+    .card1{
+      /* background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDaod6XV0s-_KQ5M5X38P7BNNiX7VoaqBerw&usqp=CAU') repeat; */
+      border: 2px solid black;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      opacity: 0.9;
+    }
+
+    .card-body {
+      margin: 30px;
+      background-color: #ffffff;
+      border: 1px solid black;
+      opacity: 0.9;
+          background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmmgBjkp5Py8VY5XAcnEqkJdfpkz6UF66fTg&usqp=CAU');
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+      background-size: cover;
+     
+      
+        }
+        .card-body1 {
+      margin: 20px;
+      padding-left: 30px;
+      padding-right: 30px;
+      padding-top: 10px;
+      background-color: #ffffff;
+      border: 1px solid black;
+      opacity: 0.9;
+      text-align: left;
+          /* background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmmgBjkp5Py8VY5XAcnEqkJdfpkz6UF66fTg&usqp=CAU'); */
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+      background-size: cover;
+      
+        }
+        .card-header{
+            text-decoration: solid;
+            color: black;
+        }
+        body{
+            background-color: azure;
+        }
+        .free{
+          background-color: rgb(233, 228, 232);
+          padding-left: 500px;
+        }
+        .back{
+          background-color: rgb(236, 232, 227);
+          padding-bottom: 10px;
+          border-radius: 2px;
+        }
+        ul{
+         list-style:circle;
+         margin: 20px;
+         padding: 20px;
+         
+        }
+        #oldone{
+          color: rgb(119, 119, 194);
+          border: none;
+          margin-left: 50px;
+          margin-bottom: 5px;
+        }
+       .btn-group{
+        text-align: center;
+        margin-left: 600px;
+       }
+        </style>
+</head>
+<body>
+    <form onsubmit="send(event)">
+        <div class="card" >
+          <div style="text-align: center;">
+            <h3 class="card-header">Group Chat App</h3>
+          </div>
+          <div class="card-body" >
+            <div class="row mb-3">          
+                <div class="col-sm-3">
+                  <input type="hidden" name="name" required />
+                </div>
+              </div> 
+              <div class="row mb-3">
+                <div class="col-sm-3">
+                    <input id="message" name="message" type="text" placeholder="message" required/>
+                </div>
+              </div>
+            <button type="submit" class="btn btn-primary">Sent</button>
+      </form>
+</div>
+  </div>
+
+  <a href=./groupname.html >Create Group :</button><br>
+  <a href="./creategroup.html">go to chats</a>
+  <h1 id="gn"></h1>
+  <ul id="spaceformsg"></ul>
+
+ 
+  <!--  <div class="card" >
+    <div style="text-align: center;">
+      <h3 class="card-header">messages</h3>
+        <div class="card-body" >
+          <div class="row mb-3">
+                
+            <div class="col-sm-3">
+              <ol id="Msgs">
+            </div>
+          </div> 
+    </div> -->
+    <div class="free">
+  <div style="text-align:center;">
+    <div class="card1 bg-light mb-10" style="max-width: 18rem;">
+      <div class="back">
+      <h3 style="color: rgb(0, 238, 255);" class="card-header">messages</h3></div>
+      <input  type="submit" value="old messages" id="oldone" />
+      <div class="card-body1"> 
+        <ul  class="list-group-item list-group-item-secondary" id="Msgs">
+        </ul>
+    </div>
+  </div>
+</div>
+<br>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.4/axios.min.js"></script>
+  <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="chat.js"></script>
+</body>
+</html>
