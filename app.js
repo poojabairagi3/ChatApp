@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const path = require("path");
 
 const express = require("express");
@@ -18,7 +20,7 @@ const chatRoutes = require("./routes/chat");
 
 const groupRoutes = require("./routes/group");
 
-const groupnameRoutes=require("./routes/groupname")
+const groupnameRoutes = require("./routes/groupname");
 
 const User = require("./models/user");
 const Chat = require("./models/chat");
@@ -35,7 +37,7 @@ app.use("/chat", chatRoutes);
 
 app.use("/groups", groupRoutes);
 
-app.use("/groupnam",groupnameRoutes);
+app.use("/groupnam", groupnameRoutes);
 
 User.hasMany(Chat);
 Chat.belongsTo(User);
@@ -49,8 +51,16 @@ GroupMsg.belongsTo(Group);
 User.belongsToMany(Group, { through: UserGroup });
 Group.belongsToMany(User, { through: UserGroup });
 
-User.belongsToMany(Group, {as: "Team",through: "GroupAdmin",timestamps: false,});
-Group.belongsToMany(User, {as: "Admin",through: "GroupAdmin",timestamps: false,});
+User.belongsToMany(Group, {
+  as: "Team",
+  through: "GroupAdmin",
+  timestamps: false,
+});
+Group.belongsToMany(User, {
+  as: "Admin",
+  through: "GroupAdmin",
+  timestamps: false,
+});
 
 sequelize
   .sync()

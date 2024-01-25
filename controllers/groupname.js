@@ -5,16 +5,17 @@ const User = require("../models/user");
 const GroupMsg = require("../models/groupmsg");
 exports.postgroupname = async (req, res, next) => {
   try {
-    const {groupname,searchInput} = req.body;
-    // const userId = req.body.id;
-
-    console.log(groupname,searchInput);
-    const gp = await Group.create({ groupname: groupname ,userId:req.user.id,name:req.user.name});
-    res
-      .status(201)
-      .json({ massage: "group added successfully", gp, success: true });
-  } catch (err) {
-    console.log(err);
+    const { groupname, userList } = req.body;
+    const list = new Set();
+    userList.forEach((ele) => list.add(ele));
+    list.add(req.user.id);
+    const data = await Group.create({ groupname, createdBy: req.user.id });
+    let arr = Array.from(list);
+    await data.addUsers(arr);
+    const addadmin = await data.addAdmin(req.user.id);
+    res.json({ message: "post group controller", data });
+  } catch (error) {
+    console.log(error.message);
   }
 };
 

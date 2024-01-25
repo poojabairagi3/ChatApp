@@ -15,7 +15,7 @@ async function signup(event){
  try{
     let response=await axios.post('http://localhost:3000/user/sign-up',obj);
     if(response.status===201){
-      window.location.href="./login.html"
+      window.location.href="/login.html"
         alert(response.data.message);    
       }
     else if(response.status===200){
