@@ -1,5 +1,14 @@
 const token = localStorage.getItem("token");
 
+const displayedExpenses = [];
+function removeFromScreen() {
+  const parentElement = document.getElementById("msg");
+  displayedExpenses.forEach((childElement) => {
+    parentElement.removeChild(childElement);
+  });
+  displayedExpenses.length = 0;
+}
+
 async function showChatOnScreen(msgsgsgs) {
   console.log("Ye MAI HU");
   console.log(msgsgsgs);
@@ -37,7 +46,7 @@ async function showGroupsOnScreen(response) {
       msgsgsgs.data.groupmsg.forEach((element) => {
           
         showChatOnScreen(element);
-       
+       removeFromScreen();
       });
       document.getElementById("msg")='';
     } catch (err) {
@@ -87,4 +96,5 @@ window.addEventListener("DOMContentLoaded", async (e) => {
   e.preventDefault();
 
   getgroupname();
+
 });

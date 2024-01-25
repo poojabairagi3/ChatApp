@@ -49,6 +49,9 @@ GroupMsg.belongsTo(Group);
 User.belongsToMany(Group, { through: UserGroup });
 Group.belongsToMany(User, { through: UserGroup });
 
+User.belongsToMany(Group, {as: "Team",through: "GroupAdmin",timestamps: false,});
+Group.belongsToMany(User, {as: "Admin",through: "GroupAdmin",timestamps: false,});
+
 sequelize
   .sync()
   .then((result) => {

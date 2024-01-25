@@ -10,6 +10,26 @@ router.get("/:search",auth.authenticate,groupController.getSearchInput);
 
 router.post("/postgroupname", auth.authenticate, groupController.postgroupname);
 
+
+module.exports = router;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // router.get("/post-search-input", auth.authenticate, groupController.getSearchInput);
 
 // router.get("/get-group", auth.authenticate, groupController.getgroup);
@@ -20,4 +40,4 @@ router.post("/postgroupname", auth.authenticate, groupController.postgroupname);
 //   groupController.getgroupmsgs
 // );
 
-module.exports = router;
+
